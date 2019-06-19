@@ -19,8 +19,42 @@ public class CatTest {
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
 
+
+    @Test
+            public void setName() {
+        Cat testCat = new Cat("Spot", null, null);
+        testCat.setName("dasha");
+
+        String expected = "dasha";
+        String actual = testCat.getName();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testSpeak() {
+        Cat testCat = new Cat(null,null,null );
+        String expected = "bark";
+
+        String actual = testCat.speak();
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void testSetBirthDate(){
+        Cat testCat = new Cat(null,,null );
+    }
+
+
+
+
     @Test
     public void constructorTest() {
+
+
         // Given (cat data)
         String givenName = "Zula";
         Date givenBirthDate = new Date();
