@@ -59,13 +59,13 @@ public class CatTest {
         Cat testCat = new Cat(null,null,null);
         Food testFood = new Food();
 
-        int x = testCat.getNumberOfMealsEaten ();
+        int x = testCat.getNumberOfMealsEaten ()+1;
 
         testCat.eat(testFood);
 
         int y= testCat.getNumberOfMealsEaten();
 
-        Assert.assertEquals(x+1,y);
+        Assert.assertEquals(x,y);
     }
 
     @Test
