@@ -29,10 +29,10 @@ public class DogTest {
         Date givenBirthDate = new Date();
         Integer givenId = 0;
 
-        // When (a cat is constructed)
+        // When (a dog is constructed)
         Dog testDog = new Dog(givenName, givenBirthDate, givenId);
 
-        // When (we retrieve data from the cat)
+        // When (we retrieve data from the dog)
         String retrievedName = testDog.getName();
         Date retrievedBirthDate = testDog.getBirthDate();
         Integer retrievedId = testDog.getId();
