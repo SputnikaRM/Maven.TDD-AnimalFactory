@@ -2,7 +2,9 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -29,26 +31,68 @@ public class CatTest {
         String actual = testCat.getName();
 
         Assert.assertEquals(expected, actual);
-
     }
 
     @Test
     public void testSpeak() {
         Cat testCat = new Cat(null,null,null );
-        String expected = "bark";
+        String expected = "meow!";
 
         String actual = testCat.speak();
 
         Assert.assertEquals(expected,actual);
-
     }
 
     @Test
     public void testSetBirthDate(){
-        Cat testCat = new Cat(null,,null );
+        Date expected = new Date("09/09/2012");
+
+        Cat testCat = new Cat (null,expected,null);
+
+        Date actual= testCat.getBirthDate();
+
+        Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void eat(){
+        Cat testCat = new Cat(null,null,null);
+        Food testFood = new Food();
 
+        int x = testCat.getNumberOfMealsEaten ();
+
+        testCat.eat(testFood);
+
+        int y= testCat.getNumberOfMealsEaten();
+
+        Assert.assertEquals(x+1,y);
+    }
+
+    @Test
+    public void testGetID() {
+        Cat testCat = new Cat(null,null,20);
+       Integer actual= testCat.getId();
+        Integer expected = 20;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testAnimalInheritance () {
+        Cat testCat = new Cat(null,null,null);
+        boolean expected = true;
+        boolean actual = testCat instanceof Animal;
+        Assert.assertEquals(expected,actual);
+
+
+    }
+
+    @Test
+    public void testMammalInheritance(){
+        Cat testCat = new Cat (null,null,null);
+        boolean expected =true;
+        boolean actual=testCat instanceof Mammal;
+        Assert.assertEquals(expected,actual);
+    }
 
 
     @Test
@@ -73,5 +117,6 @@ public class CatTest {
         Assert.assertEquals(givenBirthDate, retrievedBirthDate);
         Assert.assertEquals(givenId, retrievedId);
     }
+
 
 }
